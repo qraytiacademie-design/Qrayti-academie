@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qrayti Académie | Nqra b Tari9ti - Soutien Scolaire à Meknès</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            50: '#FAF8F3',
+                            100: '#F4F1EA',
+                            200: '#E8E2D3',
+                            300: '#DDD3BC',
+                        },
+                        sage: {
+                            100: '#E2EFE7',
+                            300: '#8CBD9F',
+                            500: '#4A9B6F',
+                            600: '#3B7A57',
+                            700: '#2D5E43',
+                            800: '#214632',
+                            900: '#152D20',
+                        },
+                        gold: {
+                            400: '#F2CE3E',
+                            500: '#E2B714',
+                            600: '#D4A30A',
+                        },
+                        charcoal: {
+                            800: '#3A423E',
+                            900: '#2C3531',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        arabic: ['Amiri', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #F4F1EA;
+            color: #2C3531;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .arabic-text {
+            font-family: 'Amiri', serif;
+        }
+
+        /* Glassmorphism header */
+        .glass-header {
+            background: rgba(244, 241, 234, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Subtle animations */
+        @keyframes pulse-subtle {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        .animate-bounce-subtle {
+            animation: pulse-subtle 3s infinite ease-in-out;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4F1EA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3B7A57;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2D5E43;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen flex flex-col antialiased selection:bg-sage-500 selection:text-white">
+
+    <!-- Sticky Navigation -->
+    <header class="sticky top-0 z-40 w-full glass-header border-b border-sage-500/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <!-- SVG Recreation of 4x4 Mosaic Logo -->
+                <div class="w-11 h-11 bg-sage-500 rounded-2xl p-1.5 shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
+                    <svg viewBox="0 0 100 100" class="w-full h-full text-cream-100 fill-current">
+                        <!-- Grid 4x4 quarter circle mosaic geometry -->
+                        <path d="M 0 0 L 22 0 A 22 22 0 0 1 0 22 Z" transform="translate(3,3)"/>
+                        <path d="M 22 0 A 22 22 0 0 1 0 22 L 0 0 Z" transform="translate(26,3) rotate(90 11 11)"/>
+                        <path d="M 0 0 L 22 0 A 22 22 0 0 1 0 22 Z" transform="translate(49,3)"/>
+                        <path d="M 22 0 A 22 22 0 0 1 0 22 L 0 0 Z" transform="translate(72,3) rotate(90 11 11)"/>
+
+                        <path d="M 22 0 A 22 22 0 0 1 0 22 L 0 0 Z" transform="translate(3,26) rotate(90 11 11)"/>
+                        <path d="M 0 0 L 22 0 A 22 22 0 0 1 0 22 Z" transform="translate(26,26)"/>
+                        <path d="M 22 0 A 22 22 0 0 1 0 22 L 0 0 Z" transform="translate(49,26) rotate(90 11 11)"/>
+                        <path d="M 0 0 L 22 0 A 22 22 0 0 1 0 22 Z" transform="translate(72,26)"/>
+
+                        <path d="M 0 0 L 22 0 A 22 22 0 0 1 0 22 Z" transform="translate(3,49)"/>
+                        <path d="M 22 0 A 22 22 0 0 1 0 22 L 0 0 Z" transform="translate(26,49) rotate(90 11 11)"/>
+                        <path d="M 0 0 L 22 0 A 22 22 0 0 1 0 22 Z" transform="translate(49,49)"/>
+                        <path d="M 22 0 A 22 22 0 0 1 0 22 L 0 0 Z" transform="translate(72,49) rotate(90 11 11)"/>
+
+                        <path d="M 22 0 A 22 22 0 0 1 0 22 L 0 0 Z" transform="translate(3,72) rotate(90 11 11)"/>
+                        <path d="M 0 0 L 22 0 A 22 22 0 0 1 0 22 Z" transform="translate(26,72)"/>
+                        <path d="M 22 0 A 22 22 0 0 1 0 22 L 0 0 Z" transform="translate(49,72) rotate(90 11 11)"/>
+                        <path d="M 0 0 L 22 0 A 22 22 0 0 1 0 22 Z" transform="translate(72,72)"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-xl tracking-tight text-sage-700 leading-none">QRAYTI ACADÉMIE</span>
+                    <span class="text-[11px] font-bold text-gold-600 tracking-wider uppercase mt-1">QRAYTI, B TARI9TI.</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-charcoal-900">
+                <a href="#pourquoi" class="hover:text-sage-600 transition-colors">Pourquoi Nous</a>
+                <a href="#niveaux" class="hover:text-sage-600 transition-colors">Niveaux</a>
+                <a href="#matieres" class="hover:text-sage-600 transition-colors">Matières</a>
+                <a href="#methode" class="hover:text-sage-600 transition-colors">Notre Méthode</a>
+                <a href="#tarifs" class="hover:text-sage-600 transition-colors">Tarifs</a>
+                <a href="#faq" class="hover:text-sage-600 transition-colors">FAQ</a>
+            </nav>
+
+            <!-- Quick WhatsApp Header CTA -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="https://wa.me/212788206157?text=Bonjour%20Qrayti%20Acad%C3%A9mie,%20je%20souhaite%20m'inscrire!" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>S'inscrire sur WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" aria-label="Ouvrir le menu" class="lg:hidden p-2.5 rounded-xl bg-sage-100 text-sage-800 focus:outline-none">
+                <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden px-4 pt-2 pb-6 border-t border-sage-500/10 bg-cream-50 transition-all">
+            <div class="flex flex-col gap-3 py-3 text-sm font-medium text-charcoal-900">
+                <a href="#pourquoi" class="mobile-nav-link py-2.5 px-4 rounded-xl hover:bg-sage-100">Pourquoi Qrayti ?</a>
+                <a href="#niveaux" class="mobile-nav-link py-2.5 px-4 rounded-xl hover:bg-sage-100">Nos Niveaux</a>
+                <a href="#matieres" class="mobile-nav-link py-2.5 px-4 rounded-xl hover:bg-sage-100">Les Matières</a>
+                <a href="#methode" class="mobile-nav-link py-2.5 px-4 rounded-xl hover:bg-sage-100">Notre Méthode</a>
+                <a href="#univers" class="mobile-nav-link py-2.5 px-4 rounded-xl hover:bg-sage-100">L'Univers Qrayti</a>
+                <a href="#organisation" class="mobile-nav-link py-2.5 px-4 rounded-xl hover:bg-sage-100">Organisation</a>
+                <a href="#tarifs" class="mobile-nav-link py-2.5 px-4 rounded-xl hover:bg-sage-100">Tarifs & Inscription</a>
+                <a href="#faq" class="mobile-nav-link py-2.5 px-4 rounded-xl hover:bg-sage-100">FAQ</a>
+                <div class="pt-3 border-t border-sage-200">
+                    <a href="https://wa.me/212788206157?text=Bonjour%20Qrayti%20Acad%C3%A9mie,%20je%20souhaite%20m'inscrire!" target="_blank" class="w-full py-3 rounded-full bg-emerald-600 text-white font-bold text-center flex items-center justify-center gap-2 shadow-md">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Je m’inscris sur WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: HERO -->
+    <section class="relative pt-8 pb-16 md:pt-16 md:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sage-100 border border-sage-300 text-sage-800 text-xs sm:text-sm font-bold tracking-wide uppercase">
+                        <i class="fa-solid fa-graduation-cap text-sage-600"></i>
+                        <span>Soutien Scolaire de Qualité à Meknès</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-sage-700 tracking-tight leading-tight">
+                        Qrayti Académie
+                        <span class="block text-2xl sm:text-3xl lg:text-4xl font-bold text-gold-600 mt-2 font-mono">
+                            "Nqra b Tari9ti."
+                        </span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-charcoal-800 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        Soutien scolaire pensé pour aider chaque élève à comprendre, pratiquer et progresser à son propre rythme.
+                    </p>
+
+                    <!-- Level Badges -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1">
+                        <span class="px-4 py-2 rounded-xl bg-sage-700 text-cream-100 font-bold text-sm shadow-sm">3AC</span>
+                        <span class="px-4 py-2 rounded-xl bg-sage-700 text-cream-100 font-bold text-sm shadow-sm">1ère Bac</span>
+                        <span class="px-4 py-2 rounded-xl bg-sage-700 text-cream-100 font-bold text-sm shadow-sm">2ème Bac</span>
+                    </div>
+
+                    <!-- Main WhatsApp CTA -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="https://wa.me/212788206157?text=Bonjour%20Qrayti%20Acad%C3%A9mie,%20je%20souhaite%20m'inscrire!" target="_blank" rel="noopener" class="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-lg shadow-xl shadow-emerald-600/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span> Je m’inscris sur WhatsApp </span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Column Visual -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative Frame background -->
+                        <div class="absolute -inset-2 bg-gradient-to-r from-sage-500 to-gold-500 rounded-3xl blur-lg opacity-30"></div>
+                        
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-cream-100 bg-sage-800">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Salle de classe Qrayti Académie Meknès" class="w-full h-80 sm:h-96 object-cover opacity-90 hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-sage-900/90 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-5 left-5 right-5 text-white">
+                                <span class="bg-gold-500 text-sage-900 font-extrabold text-xs uppercase px-3 py-1 rounded-md mb-2 inline-block">Petits Groupes</span>
+                                <p class="text-lg font-bold">Un cadre motivant pour dépasser tes limites</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: POURQUOI QRAYTI ? -->
+    <section id="pourquoi" class="py-16 bg-cream-50 border-y border-sage-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-sage-600 font-bold text-sm tracking-widest uppercase">Notre Philosophie</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-sage-700">Pourquoi Qrayti ?</h2>
+                <p class="text-xl text-sage-800 font-bold arabic-text leading-relaxed dir-rtl pt-1">
+                    حنا كنآمنو بلي كل طالب عندو طريقة ديالو فالتعلم.
+                </p>
+            </div>
+
+            <!-- Grid of 5 pillars -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="bg-white p-6 rounded-2xl border border-sage-200 shadow-sm hover:shadow-md transition-shadow flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-sage-100 text-sage-700 flex items-center justify-center text-xl shrink-0 font-bold">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-sage-800">Petits groupes</h3>
+                        <p class="text-sm text-charcoal-800 mt-1">Des effectifs réduits pour garantir une attention individuelle à chaque élève.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-sage-200 shadow-sm hover:shadow-md transition-shadow flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-sage-100 text-sage-700 flex items-center justify-center text-xl shrink-0 font-bold">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-sage-800">Explications simples & adaptées</h3>
+                        <p class="text-sm text-charcoal-800 mt-1">Dépoussiérer la théorie avec une pédagogie claire et abordable.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-sage-200 shadow-sm hover:shadow-md transition-shadow flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-sage-100 text-sage-700 flex items-center justify-center text-xl shrink-0 font-bold">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-sage-800">Exercices et corrections</h3>
+                        <p class="text-sm text-charcoal-800 mt-1">Pratique intensive avec des exercices ciblés et des corrections détaillées.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-sage-200 shadow-sm hover:shadow-md transition-shadow flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-sage-100 text-sage-700 flex items-center justify-center text-xl shrink-0 font-bold">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-sage-800">Suivi régulier</h3>
+                        <p class="text-sm text-charcoal-800 mt-1">Un contrôle continu de la progression pour ne laisser aucune lacune s'installer.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-sage-200 shadow-sm hover:shadow-md transition-shadow flex items-start gap-4 sm:col-span-2 lg:col-span-1">
+                    <div class="w-12 h-12 rounded-xl bg-sage-100 text-sage-700 flex items-center justify-center text-xl shrink-0 font-bold">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-sage-800">Accompagnement proche</h3>
+                        <p class="text-sm text-charcoal-800 mt-1">Écoute et bienveillance pour redonner confiance à l'élève dans ses capacités.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-10 text-center">
+                <a href="#methode" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-sage-700 hover:bg-sage-800 text-cream-100 font-bold text-sm transition-colors">
+                    <span> Découvrir notre méthode </span>
+                    <i class="fa-solid fa-arrow-down text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: NIVEAUX -->
+    <section id="niveaux" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-gold-600 font-bold text-sm tracking-widest uppercase">Parcours Adaptés</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-sage-700 mt-1">Nos niveaux</h2>
+            <p class="text-charcoal-800 mt-2">Un accompagnement ciblé pour chaque étape clé du collège et du lycée.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- 3AC -->
+            <div class="bg-white rounded-3xl p-8 border-2 border-sage-200 shadow-sm hover:border-sage-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-sage-500 text-white font-extrabold text-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        3AC
+                    </div>
+                    <h3 class="text-2xl font-bold text-sage-800 mb-3">3ème année collège</h3>
+                    <p class="text-charcoal-800 text-sm leading-relaxed mb-6">
+                        Soutien et accompagnement pour consolider les bases essentielles et préparer sereinement les examens régionaux.
+                    </p>
+                </div>
+                <button onclick="scrollToSubjectsAndFilter('3ac')" class="w-full py-3 rounded-xl bg-sage-100 hover:bg-sage-600 hover:text-white text-sage-800 font-bold text-sm transition-colors text-center">
+                     Voir les matières
+                </button>
+            </div>
+
+            <!-- 1ère Bac -->
+            <div class="bg-white rounded-3xl p-8 border-2 border-sage-200 shadow-sm hover:border-sage-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-sage-500 text-white font-extrabold text-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        1BAC
+                    </div>
+                    <h3 class="text-2xl font-bold text-sage-800 mb-3">1ère année Bac</h3>
+                    <p class="text-charcoal-800 text-sm leading-relaxed mb-6">
+                        Accompagnement pour comprendre les cours en profondeur, pratiquer régulièrement et réussir le Régional.
+                    </p>
+                </div>
+                <button onclick="scrollToSubjectsAndFilter('1bac')" class="w-full py-3 rounded-xl bg-sage-100 hover:bg-sage-600 hover:text-white text-sage-800 font-bold text-sm transition-colors text-center">
+                    Voir les matières 
+                </button>
+            </div>
+
+            <!-- 2ème Bac -->
+            <div class="bg-white rounded-3xl p-8 border-2 border-sage-200 shadow-sm hover:border-sage-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-gold-500 text-sage-900 font-bold text-[10px] uppercase px-3 py-1 rounded-bl-xl">
+                    Bac National
+                </div>
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-sage-500 text-white font-extrabold text-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        2BAC
+                    </div>
+                    <h3 class="text-2xl font-bold text-sage-800 mb-3">2ème année Bac</h3>
+                    <p class="text-charcoal-800 text-sm leading-relaxed mb-6">
+                        Préparation et accompagnement intensifs adaptés aux exigences élevées de l’année du Baccalauréat.
+                    </p>
+                </div>
+                <button onclick="scrollToSubjectsAndFilter('2bac')" class="w-full py-3 rounded-xl bg-sage-100 hover:bg-sage-600 hover:text-white text-sage-800 font-bold text-sm transition-colors text-center">
+                     Voir les matières 
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 4: MATIÈRES -->
+    <section id="matieres" class="py-16 bg-cream-50 border-y border-sage-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-sage-600 font-bold text-sm tracking-widest uppercase">Programme Détaillé</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-sage-700 mt-1">Les matières</h2>
+                
+                <!-- Filter tabs -->
+                <div class="flex flex-wrap items-center justify-center gap-2 mt-6" id="subject-filters">
+                    <button onclick="filterSubjects('all')" class="subj-filter-btn active-subj px-4 py-2 rounded-full font-bold text-xs sm:text-sm bg-sage-700 text-white shadow-sm">Toutes</button>
+                    <button onclick="filterSubjects('3ac')" class="subj-filter-btn px-4 py-2 rounded-full font-bold text-xs sm:text-sm bg-white text-sage-800 border border-sage-200">3AC</button>
+                    <button onclick="filterSubjects('1bac')" class="subj-filter-btn px-4 py-2 rounded-full font-bold text-xs sm:text-sm bg-white text-sage-800 border border-sage-200">1ère Bac</button>
+                    <button onclick="filterSubjects('2bac')" class="subj-filter-btn px-4 py-2 rounded-full font-bold text-xs sm:text-sm bg-white text-sage-800 border border-sage-200">2ème Bac</button>
+                </div>
+            </div>
+
+            <!-- Subject Cards Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4" id="subjects-grid">
+                
+                <div class="subject-card all 3ac 1bac 2bac bg-white p-5 rounded-2xl border border-sage-200 text-center space-y-3 hover:border-sage-500 transition-all">
+                    <div class="w-12 h-12 mx-auto rounded-xl bg-sage-100 text-sage-700 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h3 class="font-bold text-sage-800 text-sm sm:text-base">Mathématiques</h3>
+                </div>
+
+                <div class="subject-card all 1bac 2bac bg-white p-5 rounded-2xl border border-sage-200 text-center space-y-3 hover:border-sage-500 transition-all">
+                    <div class="w-12 h-12 mx-auto rounded-xl bg-sage-100 text-sage-700 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-dna"></i>
+                    </div>
+                    <h3 class="font-bold text-sage-800 text-sm sm:text-base">SVT</h3>
+                </div>
+
+                <div class="subject-card all 1bac bg-white p-5 rounded-2xl border border-sage-200 text-center space-y-3 hover:border-sage-500 transition-all">
+                    <div class="w-12 h-12 mx-auto rounded-xl bg-sage-100 text-sage-700 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h3 class="font-bold text-sage-800 text-sm sm:text-base">Français</h3>
+                </div>
+
+            </div>
+
+            <!-- Disclaimer note -->
+            <p class="text-center text-xs text-charcoal-800 italic mt-8">
+                * Les matières proposées peuvent varier selon les niveaux et les groupes ouverts.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 5: NOTRE MÉTHODE -->
+    <section id="methode" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-gold-600 font-bold text-sm tracking-widest uppercase">Étape par Étape</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-sage-700 mt-1">Comprendre. Pratiquer. Progresser.</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Step 01 -->
+            <div class="bg-white rounded-3xl p-6 border border-sage-200 shadow-sm relative overflow-hidden flex flex-col justify-between">
+                <div>
+                    <span class="text-4xl font-black text-sage-500/30 font-mono block mb-2">01</span>
+                    <h3 class="text-xl font-bold text-sage-800 mb-2">Comprendre</h3>
+                    <p class="text-charcoal-800 text-base font-bold arabic-text dir-rtl leading-relaxed">
+                        شرح واضح وبطريقة قريبة من الطالب.
+                    </p>
+                </div>
+                <div class="w-full h-1 bg-sage-500 rounded-full mt-6"></div>
+            </div>
+
+            <!-- Step 02 -->
+            <div class="bg-white rounded-3xl p-6 border border-sage-200 shadow-sm relative overflow-hidden flex flex-col justify-between">
+                <div>
+                    <span class="text-4xl font-black text-sage-500/30 font-mono block mb-2">02</span>
+                    <h3 class="text-xl font-bold text-sage-800 mb-2">Pratiquer</h3>
+                    <p class="text-charcoal-800 text-base font-bold arabic-text dir-rtl leading-relaxed">
+                        تمارين وأسئلة باش يتحول الفهم لتطبيق.
+                    </p>
+                </div>
+                <div class="w-full h-1 bg-sage-500 rounded-full mt-6"></div>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="bg-white rounded-3xl p-6 border border-sage-200 shadow-sm relative overflow-hidden flex flex-col justify-between">
+                <div>
+                    <span class="text-4xl font-black text-sage-500/30 font-mono block mb-2">03</span>
+                    <h3 class="text-xl font-bold text-sage-800 mb-2">Corriger</h3>
+                    <p class="text-charcoal-800 text-base font-bold arabic-text dir-rtl leading-relaxed">
+                        نفهمو الأخطاء ونعرفو علاش وقع الخطأ.
+                    </p>
+                </div>
+                <div class="w-full h-1 bg-sage-500 rounded-full mt-6"></div>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="bg-white rounded-3xl p-6 border border-sage-200 shadow-sm relative overflow-hidden flex flex-col justify-between">
+                <div>
+                    <span class="text-4xl font-black text-sage-500/30 font-mono block mb-2">04</span>
+                    <h3 class="text-xl font-bold text-sage-800 mb-2">Progresser</h3>
+                    <p class="text-charcoal-800 text-base font-bold arabic-text dir-rtl leading-relaxed">
+                        متابعة مستمرة باش الطالب يبني الثقة ويتطور.
+                    </p>
+                </div>
+                <div class="w-full h-1 bg-gold-500 rounded-full mt-6"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 6: À PROPOS DE QRAYTI -->
+    <section class="py-16 bg-cream-50 border-y border-sage-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-sage-600 font-bold text-sm tracking-widest uppercase">Notre Histoire</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-sage-700">
+                        Une académie pensée pour les élèves
+                    </h2>
+                    
+                    <p class="text-base sm:text-lg text-charcoal-800 leading-relaxed">
+                        Qrayti Académie est née d’une envie simple : rendre l’apprentissage plus clair, plus accessible et plus proche des élèves.
+                    </p>
+                    <p class="text-base sm:text-lg text-charcoal-800 leading-relaxed font-semibold text-sage-800">
+                        Notre objectif est de créer un environnement où l’élève peut poser ses questions, faire des erreurs, pratiquer et progresser en toute confiance.
+                    </p>
+
+                    <div class="pt-2 flex items-center gap-4">
+                        <div class="flex -space-x-3">
+                            <img class="w-12 h-12 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Professeur">
+                            <img class="w-12 h-12 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&q=80" alt="Professeur">
+                            <img class="w-12 h-12 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1580894732413-a704936a33e2?auto=format&fit=crop&w=150&q=80" alt="Professeur">
+                        </div>
+                        <p class="text-xs font-bold text-sage-800">Équipe pédagogique passionnée & expérimentée à Meknès</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img class="rounded-2xl shadow-md object-cover h-48 w-full" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="L'équipe Qrayti">
+                        <img class="rounded-2xl shadow-md object-cover h-48 w-full mt-6" src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80" alt="Soutien en classe">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION 8: ORGANISATION -->
+    <section id="organisation" class="py-16 bg-cream-50 border-y border-sage-500/10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-sage-600 font-bold text-sm tracking-widest uppercase">Déroulement</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-sage-700 mt-1">Comment ça fonctionne ?</h2>
+            </div>
+
+            <!-- Info Card -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-sage-200 shadow-md space-y-6">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+                    <div class="flex items-center gap-4 p-3 rounded-xl bg-cream-50">
+                        <i class="fa-solid fa-users text-2xl text-sage-600"></i>
+                        <div>
+                            <p class="text-xs text-charcoal-800 uppercase font-bold">Format</p>
+                            <p class="font-bold text-sage-800">Cours en petits groupes</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 p-3 rounded-xl bg-cream-50">
+                        <i class="fa-solid fa-layer-group text-2xl text-sage-600"></i>
+                        <div>
+                            <p class="text-xs text-charcoal-800 uppercase font-bold">Niveaux</p>
+                            <p class="font-bold text-sage-800">3AC • 1ère Bac • 2ème Bac</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 p-3 rounded-xl bg-cream-50">
+                        <i class="fa-solid fa-location-dot text-2xl text-sage-600"></i>
+                        <div>
+                            <p class="text-xs text-charcoal-800 uppercase font-bold">Lieu</p>
+                            <p class="font-bold text-sage-800">Meknès, Maroc</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 p-3 rounded-xl bg-cream-50">
+                        <i class="fa-solid fa-calendar-days text-2xl text-sage-600"></i>
+                        <div>
+                            <p class="text-xs text-charcoal-800 uppercase font-bold">Jours</p>
+                            <p class="font-bold text-sage-800">Du Lundi au Samedi</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 p-3 rounded-xl bg-cream-50">
+                        <i class="fa-solid fa-clock text-2xl text-sage-600"></i>
+                        <div>
+                            <p class="text-xs text-charcoal-800 uppercase font-bold">Horaires</p>
+                            <p class="font-bold text-sage-800">Flexibles & Adaptés aux élèves</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 p-3 rounded-xl bg-cream-50">
+                        <i class="fa-solid fa-hourglass-half text-2xl text-sage-600"></i>
+                        <div>
+                            <p class="text-xs text-charcoal-800 uppercase font-bold">Durée</p>
+                            <p class="font-bold text-sage-800">2 heures par séance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-sage-100 text-center">
+                    <a href="https://wa.me/212788206157?text=Bonjour,%20je%20souhaite%20conna%C3%AEtre%20les%20disponibilit%C3%A9s%20pour%20les%20groupes!" target="_blank" class="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base shadow-lg transition-all">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span> Demander les disponibilités </span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: TARIFS -->
+    <section id="tarifs" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-gold-600 font-bold text-sm tracking-widest uppercase">Investissement Réussite</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-sage-700 mt-1">Nos tarifs</h2>
+            <p class="text-charcoal-800 mt-2">Des formules transparentes et adaptées à vos besoins.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 max-w-3xl mx-auto gap-8">
+            
+            <div class="bg-white p-8 rounded-3xl border-2 border-sage-200 shadow-sm flex flex-col justify-between text-center" >
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-sage-600 bg-sage-100 px-3 py-1 rounded-full" style="color: red; background-color: #ffe5e5;">Option premuim</span>
+                    <h3 class="text-2xl font-bold text-sage-800 mt-4 mb-2">Formule Mensuelle </h3>
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-sage-600 bg-sage-100 px-3 py-1 rounded-full" style="color: red; background-color: #ffe5e5;" >450DH\mois</h2>
+                    <p class="text-sm text-charcoal-800 mb-6">Un groupe de 5 élèves maximum pour bénéficier d’un accompagnement plus personnalisé.</p>
+                </div>
+                <a href="https://wa.me/212788206157?text=Bonjour%20Qrayti,%20je%20souhaite%20m'informer%20sur%20la%20formule%20mensuelle." target="_blank" class="w-full py-3.5 rounded-xl bg-sage-700 hover:bg-sage-800 text-cream-100 font-bold text-sm transition-colors block">
+                     Se renseigner sur WhatsApp 
+                </a>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl border-2 border-sage-200 shadow-sm flex flex-col justify-between text-center">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-sage-600 bg-sage-100 px-3 py-1 rounded-full">Option Populaire</span>
+                    <h3 class="text-2xl font-bold text-sage-800 mt-4 mb-2">Formule Mensuelle</h3>
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-sage-600 bg-sage-100 px-3 py-1 rounded-full">300DH\mois</h2>
+                    <p class="text-sm text-charcoal-800 mb-6">Abonnement au mois pour un suivi continu et régulier dans toutes vos matières.</p>
+                </div>
+                <a href="https://wa.me/212788206157?text=Bonjour%20Qrayti,%20je%20souhaite%20m'informer%20sur%20la%20formule%20mensuelle." target="_blank" class="w-full py-3.5 rounded-xl bg-sage-700 hover:bg-sage-800 text-cream-100 font-bold text-sm transition-colors block">
+                     Se renseigner sur WhatsApp 
+                </a>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl border-2 border-sage-200 shadow-sm flex flex-col justify-between text-center">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-gold-600 bg-gold-400/20 px-3 py-1 rounded-full">Option À la carte</span>
+                    <h3 class="text-2xl font-bold text-sage-800 mt-4 mb-2">Par Séance</h3>
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-gold-600 bg-gold-400/20 px-3 py-1 rounded-full">130DH\seance</h2>
+                    <p class="text-sm text-charcoal-800 mb-6">Paiement par séance pour un soutien ponctuel ou ciblé sur un chapitre spécifique.</p>
+                </div>
+                <a href="https://wa.me/212788206157?text=Bonjour%20Qrayti,%20je%20souhaite%20m'informer%20sur%20les%20tarifs%20par%20s%C3%A9ance." target="_blank" class="w-full py-3.5 rounded-xl bg-sage-700 hover:bg-sage-800 text-cream-100 font-bold text-sm transition-colors block">
+                     Se renseigner sur WhatsApp 
+                </a>
+            </div>
+
+        </div>
+
+        <div class="mt-10 text-center max-w-xl mx-auto">
+            <a href="https://wa.me/212788206157?text=Bonjour%20Qrayti%20Acad%C3%A9mie,%20pouvez-vous%20me%20donner%20les%20tarifs%20et%20groupes%20ouverts%20?" target="_blank" class="text-sm font-bold text-emerald-700 hover:underline inline-flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Contactez-nous sur WhatsApp pour connaître les disponibilités et les groupes ouverts.</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- SECTION 10: COMMENT S’INSCRIRE ? -->
+    <section class="py-16 bg-cream-50 border-y border-sage-500/10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-sage-600 font-bold text-sm tracking-widest uppercase">Inscription Simple</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-sage-700 mt-1">3 étapes pour rejoindre Qrayti</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-white p-6 rounded-3xl border border-sage-200 text-center space-y-4">
+                    <div class="w-12 h-12 mx-auto rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xl">
+                        1
+                    </div>
+                    <h3 class="font-bold text-lg text-sage-800">01 — Contactez-nous</h3>
+                    <p class="text-sm text-charcoal-800">Cliquez sur le bouton WhatsApp pour ouvrir la discussion directe.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border border-sage-200 text-center space-y-4">
+                    <div class="w-12 h-12 mx-auto rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xl">
+                        2
+                    </div>
+                    <h3 class="font-bold text-lg text-sage-800">02 — Vos informations</h3>
+                    <p class="text-sm text-charcoal-800">Envoyez votre nom, niveau (3AC, 1BAC, 2BAC), matière et vos disponibilités.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border border-sage-200 text-center space-y-4">
+                    <div class="w-12 h-12 mx-auto rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xl">
+                        3
+                    </div>
+                    <h3 class="font-bold text-lg text-sage-800">03 — Confirmation</h3>
+                    <p class="text-sm text-charcoal-800">Notre équipe vous répond rapidement pour vous confirmer le groupe et l'horaire.</p>
+                </div>
+
+            </div>
+
+            <div class="mt-10 text-center">
+                <a href="https://wa.me/212788206157?text=Bonjour,%20je%20souhaite%20m'inscrire%20%C3%A0%20Qrayti%20Acad%C3%A9mie!" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-base shadow-xl transition-all">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Je contacte Qrayti</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 11: FAQ -->
+    <section id="faq" class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <span class="text-gold-600 font-bold text-sm tracking-widest uppercase">Réponses à vos questions</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-sage-700 mt-1">Questions fréquentes</h2>
+        </div>
+
+        <div class="space-y-4" id="faq-accordion">
+            
+            <div class="bg-white rounded-2xl border border-sage-200 overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-sage-800 flex justify-between items-center gap-4">
+                    <span>Quels niveaux proposez-vous ?</span>
+                    <i class="fa-solid fa-chevron-down text-sage-500 transition-transform"></i>
+                </button>
+                <div class="hidden p-5 pt-0 text-sm text-charcoal-800 border-t border-sage-100">
+                    Nous proposons des cours de soutien pour la 3ème année collège (3AC), la 1ère année Bac (1BAC) et la 2ème année Bac (2BAC).
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-sage-200 overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-sage-800 flex justify-between items-center gap-4">
+                    <span>Les cours sont-ils en groupe ?</span>
+                    <i class="fa-solid fa-chevron-down text-sage-500 transition-transform"></i>
+                </button>
+                <div class="hidden p-5 pt-0 text-sm text-charcoal-800 border-t border-sage-100">
+                    Oui, nous fonctionnons exclusivement en petits groupes afin d'assurer une meilleure interaction et un suivi personnalisé pour chaque élève.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-sage-200 overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-sage-800 flex justify-between items-center gap-4">
+                    <span>Comment s’inscrire ?</span>
+                    <i class="fa-solid fa-chevron-down text-sage-500 transition-transform"></i>
+                </button>
+                <div class="hidden p-5 pt-0 text-sm text-charcoal-800 border-t border-sage-100">
+                    L'inscription se fait directement via WhatsApp. Cliquez sur un des boutons de contact du site pour nous envoyer votre message.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-sage-200 overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-sage-800 flex justify-between items-center gap-4">
+                    <span>Comment connaître les horaires ?</span>
+                    <i class="fa-solid fa-chevron-down text-sage-500 transition-transform"></i>
+                </button>
+                <div class="hidden p-5 pt-0 text-sm text-charcoal-800 border-t border-sage-100">
+                    Contactez-nous directement sur WhatsApp. Nous vous communiquerons le planning exact selon le niveau et la matière choisis.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-sage-200 overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-sage-800 flex justify-between items-center gap-4">
+                    <span>Quelles matières proposez-vous ?</span>
+                    <i class="fa-solid fa-chevron-down text-sage-500 transition-transform"></i>
+                </button>
+                <div class="hidden p-5 pt-0 text-sm text-charcoal-800 border-t border-sage-100">
+                    Nous proposons les Mathématiques, SVT et Français Les matières disponibles varient selon le niveau et le groupe ouvert.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-sage-200 overflow-hidden">
+                <button onclick="toggleFaq(this)" class="w-full text-left p-5 font-bold text-sage-800 flex justify-between items-center gap-4">
+                    <span>Puis-je demander plus d’informations avant l’inscription ?</span>
+                    <i class="fa-solid fa-chevron-down text-sage-500 transition-transform"></i>
+                </button>
+                <div class="hidden p-5 pt-0 text-sm text-charcoal-800 border-t border-sage-100">
+                    Bien sûr ! Notre équipe est disponible sur WhatsApp pour répondre à toutes vos questions avant de vous engager.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 12: CONTACT & FOOTER -->
+    <footer id="contact" class="bg-sage-900 text-cream-100 pt-16 pb-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-12 border-b border-sage-700">
+                
+                <div class="lg:col-span-6 space-y-4">
+                    <h3 class="text-3xl font-extrabold">Une question ? Parlons.</h3>
+                    <p class="text-sage-300 text-sm max-w-md">
+                        N'hésitez pas à nous contacter directement sur nos réseaux ou passer nous voir à notre centre à Meknès.
+                    </p>
+                    <div class="flex items-center gap-3 text-gold-400 font-bold text-sm pt-2">
+                        <i class="fa-solid fa-location-dot text-lg"></i>
+                        <span>📍 Meknès, Maroc</span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 flex flex-col justify-center">
+                    <p class="text-xs font-bold text-sage-300 uppercase tracking-widest mb-4">Nos Réseaux Sociaux</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://wa.me/212788206157" target="_blank" aria-label="WhatsApp" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="https://www.instagram.com/qrayti_academie/" target="_blank" aria-label="Instagram" class="px-4 py-2.5 rounded-xl bg-sage-800 hover:bg-sage-700 text-white font-bold text-sm flex items-center gap-2">
+                            <i class="fa-brands fa-instagram"></i> Instagram
+                        </a>
+                        <a href="https://www.tiktok.com/@qrayti.acadmie" target="_blank" aria-label="TikTok" class="px-4 py-2.5 rounded-xl bg-sage-800 hover:bg-sage-700 text-white font-bold text-sm flex items-center gap-2">
+                            <i class="fa-brands fa-tiktok"></i> TikTok
+                        </a>
+                        <a href="https://web.facebook.com/profile.php?id=61594956781937" target="_blank" aria-label="Facebook" class="px-4 py-2.5 rounded-xl bg-sage-800 hover:bg-sage-700 text-white font-bold text-sm flex items-center gap-2">
+                            <i class="fa-brands fa-facebook-f"></i> Facebook
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FINAL CTA BANNER -->
+            <div class="my-12 p-8 sm:p-12 rounded-3xl bg-sage-800 border border-sage-700 text-center space-y-6 relative overflow-hidden">
+                <div class="relative z-10 space-y-3">
+                    <h3 class="text-2xl sm:text-4xl font-extrabold text-white">
+                        Prêt(e) à apprendre à ta façon ?
+                    </h3>
+                    <p class="text-gold-400 font-bold text-lg">
+                        Qrayti Académie — Nqra b Tari9ti.
+                    </p>
+                    <div class="pt-4">
+                        <a href="https://wa.me/212788206157?text=Bonjour%20Qrayti%20Acad%C3%A9mie,%20je%20suis%20pr%C3%AAt(e)%20%C3%A0%20rejoindre%20l'acad%C3%A9mie!" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-lg shadow-2xl hover:scale-105 transition-all">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span> Rejoindre Qrayti</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center text-xs text-sage-400 pt-4">
+                &copy; 2026 Qrayti Académie Meknès. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Sticky WhatsApp Button -->
+    <a href="https://wa.me/212788206157?text=Bonjour%20Qrayti%20Acad%C3%A9mie,%20je%20souhaite%20m'inscrire!" target="_blank" rel="noopener" aria-label="Discuter sur WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center text-3xl shadow-2xl hover:scale-110 active:scale-95 transition-all animate-bounce-subtle">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Lightbox Modal for Gallery -->
+    <div id="gallery-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="relative max-w-3xl w-full text-center space-y-4">
+            <button onclick="closeGalleryModal()" class="absolute -top-10 right-0 text-white text-2xl hover:text-gold-400">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="modal-img" src="" alt="Aperçu" class="max-h-[75vh] mx-auto rounded-2xl shadow-2xl object-contain">
+            <p id="modal-caption" class="text-white font-bold text-lg"></p>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+        menuBtn?.addEventListener('click', () => {
+            mobileMenu?.classList.toggle('hidden');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu?.classList.add('hidden');
+            });
+        });
+
+        // FAQ Accordion Toggle
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Subject Filtering Logic
+        function filterSubjects(level) {
+            const cards = document.querySelectorAll('.subject-card');
+            const buttons = document.querySelectorAll('.subj-filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-sage-700', 'text-white');
+                btn.classList.add('bg-white', 'text-sage-800');
+            });
+
+            event?.target.classList.remove('bg-white', 'text-sage-800');
+            event?.target.classList.add('bg-sage-700', 'text-white');
+
+            cards.forEach(card => {
+                if (level === 'all' || card.classList.contains(level)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function scrollToSubjectsAndFilter(level) {
+            filterSubjects(level);
+            const section = document.getElementById('matieres');
+            section?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Lightbox Modal for Gallery
+        function openGalleryModal(caption, imgSrc) {
+            const modal = document.getElementById('gallery-modal');
+            const modalImg = document.getElementById('modal-img');
+            const modalCaption = document.getElementById('modal-caption');
+
+            modalImg.src = imgSrc;
+            modalCaption.innerText = caption;
+            modal.classList.remove('hidden');
+        }
+
+        function closeGalleryModal() {
+            document.getElementById('gallery-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
